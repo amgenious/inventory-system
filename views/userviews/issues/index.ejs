@@ -1,0 +1,109 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/navbar') %>
+
+<div class="container">
+    <button class="btn btn-info" type="submit" style="margin-top: 5px;"><a href="/viewissues" style="text-decoration: none; color: black;">Manage Issues</a></button>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="add_bt">
+                <p><i class="bi bi-plus-circle"></i> Add Issues</p>
+                <form method="post" action="#" id="staform">
+                    <div id="form_cont">
+                    <label>Client Name</label>
+                    <input type="text" name="clientname" placeholder="Client Name" required>
+                    </div>
+                    <br>
+                    <div id="form_cont">
+                    <label>Client Contact</label>
+                    <input type="tel" name="clientcontact" placeholder="Client Contact" required>
+                    </div>
+                    <br>
+                    <div id="form_cont">
+                    <label>Order Date</label>
+                    <input type="date" name="orderdate" required>
+                    </div>
+                    <br>
+                    <div id="form_cont">
+                        <label for="status">Amount Type</label>
+                        <select name="sta" id="sta" form="staform">
+                            <option value="shelve1" selected="true" disabled="disabled">Select Amount Type</option>
+                            <option value="Cash">Cash</option>
+                            <option value="Cheque">Cheque</option>
+                            <option value="Mobile Money">Mobile Money</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div id="form_cont">
+                        <label for="status">Payment Type</label>
+                        <select name="sta" id="sta" form="staform">
+                            <option value="shelve1" selected="true" disabled="disabled">Select Payment Type</option>
+                            <option value="Full Payment">Full Payment</option>
+                            <option value="Part Payment">Part Payment</option>
+                            <option value="Installment">Installment</option>
+                        </select>
+                    </div>
+                    <br>
+                    <table>
+                        <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select name="sta" id="sta" form="staform">
+                                    <option value="shelve1" selected="true" disabled="disabled">Select Product</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="number" name="price" placeholder="price" required>
+                            </td>
+                            <td>
+                                <input type="number" name="quantity" placeholder="quantity" required>
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select name="sta" id="sta" form="staform">
+                                    <option value="shelve1" selected="true" disabled="disabled">Select Product</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="number" name="price" placeholder="price" required>
+                            </td>
+                            <td>
+                                <input type="number" name="quantity" placeholder="quantity" required>
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select name="sta" id="sta" form="staform">
+                                    <option value="shelve1" selected="true" disabled="disabled">Select Product</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="number" name="price" placeholder="price" required>
+                            </td>
+                            <td>
+                                <input type="number" name="quantity" placeholder="quantity" required>
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                    </table>
+                    <button type="submit" class="updatebtn" name="button5" value="button5"> Add</button>
+                </form>
+               
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../../partials/footer') %>

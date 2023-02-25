@@ -1,0 +1,49 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/adminnavbar') %>
+
+<div class="container">
+    <button class="btn btn-info" type="submit" style="margin-top: 5px; margin-bottom: 5px;"><a href="/receipt" style="text-decoration: none; color: black;">Add Receipt</a></button>
+    <div class="row">
+      <div class="col-md-12">
+          <div class="add_bt">
+              <p><i class="bi bi-pen"></i> Manage Receipts</p>
+              <table class="table table-primary table-striped-columns">
+                  <thead>
+                    <tr>
+                      <th scope="col">Client Name</th>
+                      <th scope="col">Client Contact</th>
+                      <th scope="col">Invoice Number</th>
+                      <th scope="col">Value Date</th>
+                      <th scope="col">Total Products</th>
+                      <th scope="col">Items Names</th>
+                      <th scope="col">Total Quantities</th>
+                      <th scope="col">Total Amount Paid</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% if (Receipts.length > 0){ %> <% Receipts.forEach(Receipt => { %>
+                    <tr>
+                      <td><%= Receipt.clientname %></td>
+                      <td><%= Receipt.clientcontact %></td>
+                      <td><%= Receipt.invoicenumber %></td>
+                      <td><%= Receipt.valuedate %></td>
+                      <td><%= Receipt.totalitems %></td>
+                      <td><%= Receipt.allitemsname %></td>
+                      <td><%= Receipt.totalquantities %></td>
+                      <td><%= Receipt.totalamount %></td>
+                      <td><a href="/editreceipt/<%- Receipt._id %>" style="margin-right:5px; color:green;"><i class="bi bi-pen"></i></a>
+                        <a href="/deletereceipt/<%- Receipt._id %>" style="color: red;"><i class="bi bi-trash"></i></a>
+                    </td>
+                    </tr>
+                    <% }) %> <% } else{ %>
+                      <p>There are no Receipts to be displayed</p>
+                    <% } %>
+                  </tbody>
+                </table>
+          </div>
+      </div>
+  </div>
+</div>
+
+<%- include('../../partials/footer') %>

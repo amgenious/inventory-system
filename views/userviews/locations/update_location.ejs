@@ -1,0 +1,32 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/navbar') %>
+
+<body>
+    <div class="container">
+        <button class="btn btn-info" type="submit" style="margin-top: 5px;"><a href="/viewlocation" style="text-decoration: none; color: black;">Manage Locations</a></button>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="add_bt">
+                    <p><i class="bi bi-minus-circle"></i> Update Location</p>
+                    <form method="post" action="#" id="staform">
+                        <div>
+                        <label>Location</label>
+                        <input type="text" name="location" placeholder="location">
+                        </div>
+                        <br>
+                        <div>
+                        <label for="status">Status</label>
+                            <select name="sta" id="sta" form="staform">
+                                <option value="#"selected="true" disabled="disabled"><p>---SET LOCATION STATUS ---</p></option>
+                                <option value="available">Available</option>
+                                <option value="not_available">Not Available</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="updatebtn" name="button5" value="button5"> Update</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<%- include('../../partials/footer') %>

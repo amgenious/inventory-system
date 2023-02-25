@@ -1,0 +1,40 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/adminnavbar') %>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="add_bt">
+          <p><i class="bi bi-minus-circle"></i> Update User</p>
+          <form method="post" action="/updateuser/<%- Users._id %>">
+            <div>
+              <label>User Name</label>
+              <input
+                type="text"
+                name="username"
+                placeholder="User Name"
+                value="<%- Users.username %>"
+              />
+            </div>
+            <br />
+            <div>
+              <label>Password</label>
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value="<%- Users.password %>"
+              />
+            <button
+              type="submit"
+              class="updatebtn"
+            >
+              Update
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%- include('../../partials/footer') %>

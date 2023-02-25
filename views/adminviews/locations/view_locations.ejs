@@ -1,0 +1,35 @@
+<%- include('../../partials/header') %>
+<%- include('../../partials/adminnavbar') %>
+<div class="container">
+    <button class="btn btn-info" type="submit" style="margin-top: 5px; margin-bottom: 5px;"><a href="/locations" style="text-decoration: none; color: black;">Add Location</a></button>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="add_bt">
+                <p><i class="bi bi-pen"></i> Manage Locations</p>
+                <table class="table table-primary table-striped-columns">
+                    <thead>
+                      <tr>
+                        <th scope="col">Location</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% if (locations.length > 0){ %> <% locations.forEach(location => { %>
+                      <tr>
+                        <td><%= location.location %></td>
+                        <td><%= location.status %></td>
+                        <td><a href="/edit/<%- location._id %>" style="margin-right:5px; color:green;"><i class="bi bi-pen"></i></a>
+                          <a href="/delete/<%- location._id %>" style="color: red;"><i class="bi bi-trash"></i></a>
+                      </td>
+                      </tr>
+                      <% }) %> <% } else{ %>
+                        <p>There are no locations to be displayed</p>
+                      <% } %>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../../partials/footer') %>

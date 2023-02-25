@@ -1,0 +1,21 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/adminnavbar') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="add_bt">
+                <p><i class="bi bi-search"></i> Enquire By Location</p>
+                <form method="post" action="/searchlocation" id="staform">
+                    <div>
+                    <label>Location</label>
+                    <input type="text" name="location" placeholder="enter location" required>
+                    </div>
+                    <button type="submit" class="updatebtn"> Search</button>
+                </form>
+               
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../../partials/footer') %>

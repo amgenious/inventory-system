@@ -1,0 +1,85 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/adminnavbar') %>
+
+<div class="container">
+    <button class="btn btn-info" type="submit" style="margin-top: 5px;"><a href="/viewissue" style="text-decoration: none; color: black;">Manage Issues</a></button>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="add_bt">
+                <p><i class="bi bi-plus-circle"></i> Add Issues</p>
+                <form method="post" action="/add/issues" id="staform">
+                    <div>
+                    <label>Client Name</label>
+                    <input type="text" name="clientname" placeholder="Client Name" required>
+                    </div>
+                    <br>
+                    <div>
+                    <label>Client Contact</label>
+                    <input type="tel" name="clientcontact" placeholder="Client Contact" required>
+                    </div>
+                    <br>
+                    <div>
+                    <label>Order Date</label>
+                    <input type="date" name="orderdate" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label>Amount Type</label>
+                        <select name="amounttype" id="amounttype" form="staform">
+                            <option value="shelve1" selected="true" disabled="disabled">Select Amount Type</option>
+                            <option value="Cash">Cash</option>
+                            <option value="Cheque">Cheque</option>
+                            <option value="Mobile Money">Mobile Money</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <label>Payment Type</label>
+                        <select name="paymenttype" id="paymenttype">
+                            <option value="shelve1" selected="true" disabled="disabled">Select Payment Type</option>
+                            <option value="Full Payment">Full Payment</option>
+                            <option value="Part Payment">Part Payment</option>
+                            <option value="Installment">Installment</option>
+                        </select>
+                    </div>
+                    <br>
+                    <table>
+                        <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select name="itemname" id="itemname">
+                                    <option value="shelve1" selected="true" disabled="disabled">Select Item</option>
+                                    <% for(var j = 0; j < Items.length; j++) { %>
+                                        <option name='itemname' value="<%= Items[j].itemname %>" ><%= Items[j].itemname %></option>
+                                        <% } %>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="price" id="price">
+                                    <option value="shelve0" selected="true" disabled="disabled">Select Price</option>
+                                    <% for(var i = 0; i < Items.length; i++) { %>
+                                        <option name='price' value="<%= Items[i].price %>"><%= Items[i].price %></option>
+                                        <% } %>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="number" name="quantity" placeholder="quantity" required>
+                            </td>
+                            <td>
+                                <input type="number" name="total" placeholder="Total" required>
+                            </td>
+                        </tr>
+                    </table>
+                    <button type="submit" class="updatebtn"> Add</button>
+                </form>
+               
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../../partials/footer') %>

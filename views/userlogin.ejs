@@ -1,0 +1,25 @@
+<%- include('./partials/loginheader.ejs') %>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="formes">
+                    <form method="POST" action="/userlogin" id="for">
+                        <h3>User Login</h3>
+                        <div class="inputstyle">
+                            <label>Username</label>
+                            <input type="text" name="username" placeholder="username">
+                        </div>
+                        <div class="inputstyle">
+                            <label>Password</label>
+                            <input type="password" name="password" placeholder="password">
+                        </div>
+                        <a style="text-decoration: none;color: black;"><input type="submit" class="btn btn-success"></a>
+                        <!-- <button class="btn btn-success"><a href="../add-sections/location.html" style="text-decoration: none;color: black;">Login</a></button> -->
+                        <p><a href="/usersignup" style="text-decoration: none; color: black;">Sign Up</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,87 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/adminnavbar') %>
+
+<div class="container">
+    <button class="btn btn-info" type="submit" style="margin-top: 5px;"><a href="/viewitem" style="text-decoration: none; color: black;">Manage Items</a></button>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="add_bt">
+                <p><i class="bi bi-plus-circle"></i> Add Items</p>
+                <form method="post" action="/add/item" id="staform">
+                    <div>
+                    <label>Item Name</label>
+                    <input type="text" name="itemname" placeholder="item name" required>
+                    </div>
+                    <br>
+                    <div>
+                    <label>Part Number</label>
+                    <input type="number" name="partnumber" placeholder="Part number" required>
+                    </div>
+                    <br>
+                    <div>
+                    <label>Product Label</label>
+                    <input type="text" name="productlabel" placeholder="Product label" required>
+                    </div>
+                    <br>
+                    <div>
+                    <label>Quantity</label>
+                    <input type="number" name="quantity" placeholder="Quantity" required>
+                    </div>
+                    <br>
+                    <div>
+                        <label>Location</label>
+                        <select name="location" id="location">
+                            <option value="shelve0" selected="true" disabled="disabled">Select Location</option>
+                            <% for(var j = 0; j < Locations.length; j++) { %>
+                            <option name='location' value="<%= Locations[j].location %>"><%= Locations[j].location %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <label>Category</label>
+                        <select name="category" id="category">
+                            <option value="shelve1" selected="true" disabled="disabled">Select Category</option>
+                            <% for(var i = 0; i < Categories.length; i++) { %>
+                                <option name="category" value="<%= Categories[i].category %>"><%= Categories[i].category %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <br>
+                    <div>
+                        <label for="status">Status</label>
+                        <select name="status" id="status">
+                            <option value="shelve1" selected="true" disabled="disabled">Select Status</option>
+                            <option value="Available">Available</option>
+                            <option value="Not Available">Not Available</option>
+                        </select>
+                    </div>
+                    <br>
+                        <div>
+                            <label>Inventory Instock</label>
+                            <input type="number" name="inventoryinstock" placeholder="Inventory In-stock" required>
+                        </div>
+                    <br>
+                        <div>
+                            <label>Minimum Instock</label>
+                            <input type="number" name="minimuminstock" placeholder="Minimum In-stock" required>
+                        </div>
+                    <br>
+                        <div>
+                            <label>Maximum needed</label>
+                            <input type="number" name="maximumneeded" placeholder="Maximum neeeded" required>
+                        </div>
+                    <br>
+                        <div>
+                            <label>Price</label>
+                            <input type="number" name="price" placeholder="price" required>
+                        </div>
+                    <br>
+                    <button type="submit" class="updatebtn" name="button5" value="button5"> Add</button>
+                </form>
+               
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../../partials/footer') %>

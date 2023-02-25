@@ -1,0 +1,34 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/navbar') %>
+
+<div class="container">
+    <button class="btn btn-info" type="submit" style="margin-top: 5px;"><a href="/viewcategory" style="text-decoration: none; color: black;">Manage Categories</a></button>
+      <div class="row">
+          <div class="col-md-12">
+              <div class="add_bt">
+                  <p><i class="bi bi-minus-circle"></i> Update Category</p>
+                  <form method="post" action="#" id="staform">
+                      <div>
+                      <label>Catergory</label>
+                      <input type="text" name="category" placeholder="catergory">
+                      </div>
+                      <br>
+                      <div>
+                      <label for="status">Status</label>
+                          <select name="sta" id="sta" form="staform">
+                              <option value="#" id="dis" selected="true" disabled="disabled">---SELECT CATEGORY---</option>
+                              <option name="purchase_in_bulk" value="purchase_in_bulk">Purchase In bulk</option>
+                              <option name="single_purchase" value="single_purchase">Single Purchase</option>
+                          </select>
+                      </div>
+                      <button type="submit" class="updatebtn" name="button5" value="button5">Update</button>
+                  </form>
+                 
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+<%- include('../../partials/footer') %>

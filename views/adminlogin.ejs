@@ -1,0 +1,24 @@
+<%- include('./partials/loginheader.ejs') %>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="formes">
+                    <form method="POST" action="/adminlogin">
+                        <h3>Admin Login</h3>
+                        <div class="inputstyle">
+                            <label>Username</label>
+                            <input type="text" name="username" placeholder="username">
+                        </div>
+                        <div class="inputstyle">
+                            <label>Password</label>
+                            <input type="password" name="password" placeholder="password">
+                        </div>
+                        <input type="submit" class="btn btn-success">
+                        <p><a href="/" style="text-decoration: none; color: black;">Dashboard</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

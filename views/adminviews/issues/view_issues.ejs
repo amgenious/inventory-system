@@ -1,0 +1,50 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/adminnavbar') %>
+
+<div class="container">
+    <button class="btn btn-info" type="submit" style="margin-top: 5px; margin-bottom: 5px;"><a href="/issue" style="text-decoration: none; color: black;">Add Issue</a></button>
+    <div class="row">
+      <div class="col-md-12">
+          <div class="add_bt">
+              <p><i class="bi bi-pen"></i> Manage Issues</p>
+              <table class="table table-primary table-striped-columns">
+                  <thead>
+                    <tr>
+                      <th scope="col">Client Name</th>
+                      <th scope="col">Client Contact</th>
+                      <th scope="col">Order Date</th>
+                      <th scope="col">Amount Type</th>
+                      <th scope="col">Payment Type</th>
+                      <th scope="col">Item Name</th>
+                      <th scope="col">Price</th>
+                      <th scope="col">Quantities</th>
+                      <th scope="col">Total</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% if (Issues.length > 0){ %> <% Issues.forEach(Issue => { %>
+                    <tr>
+                      <td><%= Issue.clientname %></td>
+                      <td><%= Issue.clientcontact %></td>
+                      <td><%= Issue.orderdate %></td>
+                      <td><%= Issue.amounttype %></td>
+                      <td><%= Issue.paymenttype %></td>
+                      <td><%= Issue.itemname %></td>
+                      <td><%= Issue.price %></td>
+                      <td><%= Issue.quantity %></td>
+                      <td><%= Issue.total %></td>
+                      <td><a href="/editissue/<%- Issue._id %>" style="margin-right:5px; color:green;"><i class="bi bi-pen"></i></a>
+                        <a href="/deleteissue/<%- Issue._id %>" style="color: red;"><i class="bi bi-trash"></i></a>
+                    </td>
+                    </tr>
+                    <% }) %> <% } else{ %>
+                      <p>There are no Issues to be displayed</p>
+                    <% } %>
+                  </tbody>
+                </table>
+          </div>
+      </div>
+  </div>
+</div>
+<%- include('../../partials/footer') %>

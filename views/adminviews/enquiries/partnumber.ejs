@@ -1,0 +1,20 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/adminnavbar') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="add_bt">
+                <p><i class="bi bi-search"></i> Enquire By Partnumber</p>
+                <form method="get" action="/search">
+                    <div>
+                    <label>Part Number</label>
+                    <input type="number" name="partnumber" placeholder="enter part number" required>
+                    </div>
+                    <button type="submit" class="updatebtn"> Search</button>
+                </form>
+            </div>   
+        </div>
+    </div>
+</div>
+<%- include('../../partials/footer') %>

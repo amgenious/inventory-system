@@ -1,0 +1,50 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/adminnavbar') %>
+
+<div class="container">
+    <button class="btn btn-info" type="submit" style="margin-top: 5px; margin-bottom: 5px;"><a href="/item" style="text-decoration: none; color: black;">Add Item</a></button>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="add_bt">
+                <p><i class="bi bi-pen"></i> Manage Items</p>
+                <table class="table table-primary table-striped-columns">
+                    <thead>
+                      <tr>
+                        <th scope="col">Item Name</th>
+                        <th scope="col">Part Number</th>
+                        <th scope="col">Product label</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">In-stock</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% if (Items.length > 0){ %> <% Items.forEach(Item => { %>
+                      <tr>
+                        <td><%= Item.itemname %></td>
+                        <td><%= Item.partnumber %></td>
+                        <td><%= Item.productlabel %></td>
+                        <td><%= Item.quantity %></td>
+                        <td><%= Item.location %></td>
+                        <td><%= Item.category %></td>
+                        <td><%= Item.status %></td>
+                        <td><%= Item.inventoryinstock %></td>
+                        <td><%= Item.price %></td>
+                        <td><a href="/edititem/<%- Item._id %>" style="margin-right:5px; color:green;"><i class="bi bi-pen"></i></a>
+                          <a href="/deleteitem/<%- Item._id %>" style="color: red;"><i class="bi bi-trash"></i></a>
+                      </td>
+                      </tr>
+                      <% }) %> <% } else{ %>
+                        <p>There are no Items to be displayed</p>
+                      <% } %>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../../partials/footer') %>

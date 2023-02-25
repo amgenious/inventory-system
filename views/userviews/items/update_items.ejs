@@ -1,0 +1,81 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/navbar') %>
+
+<div class="container">
+    <button class="btn btn-info" type="submit" style="margin-top: 5px;"><a href="/viewitems" style="text-decoration: none; color: black;">Manage Items</a></button>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="add_bt">
+                <p><i class="bi bi-minus-circle"></i> Update Item</p>
+                <form method="post" action="#" id="staform">
+                    <div id="form_cont">
+                    <label>Item Name</label>
+                    <input type="text" name="item_name" placeholder="item name" required>
+                    </div>
+                    <br>
+                    <div id="form_cont">
+                    <label>Part Number</label>
+                    <input type="number" name="part_number" placeholder="Part number" required>
+                    </div>
+                    <br>
+                    <div id="form_cont">
+                    <label>Product Label</label>
+                    <input type="text" name="product_label" placeholder="Product label" required>
+                    </div>
+                    <br>
+                    <div id="form_cont">
+                    <label>Quantity</label>
+                    <input type="number" name="quantity" placeholder="Quantity" required>
+                    </div>
+                    <br>
+                    <div id="form_cont">
+                        <label for="status">Location</label>
+                        <select name="sta" id="sta" form="staform">
+                            <option value="shelve1" selected="true" disabled="disabled">Select location</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div id="form_cont">
+                        <label for="status">Category</label>
+                        <select name="sta" id="sta" form="staform">
+                            <option value="shelve1" selected="true" disabled="disabled">Select Category</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div id="form_cont">
+                        <label for="status">Status</label>
+                        <select name="sta" id="sta" form="staform">
+                            <option value="shelve1" selected="true" disabled="disabled">Select Status</option>
+                            <option value="available">Available</option>
+                            <option value="not available">Not Available</option>
+                        </select>
+                    </div>
+                    <br>
+                        <div id="form_cont">
+                            <label>Inventory Instock</label>
+                            <input type="number" name="inventory_instock" placeholder="Inventory In-stock" required>
+                        </div>
+                    <br>
+                        <div id="form_cont">
+                            <label>Minimum Instock</label>
+                            <input type="number" name="minimum_instock" placeholder="Minimum In-stock" required>
+                        </div>
+                    <br>
+                        <div id="form_cont">
+                            <label>Maximum needed</label>
+                            <input type="number" name="maximum_needed" placeholder="Maximum neeeded" required>
+                        </div>
+                    <br>
+                        <div id="form_cont">
+                            <label>Price</label>
+                            <input type="number" name="price" placeholder="price" required>
+                        </div>
+                    <br>
+                    <button type="submit" class="updatebtn" name="button5" value="button5">Update</button>
+                </form>
+               
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../../partials/footer') %>

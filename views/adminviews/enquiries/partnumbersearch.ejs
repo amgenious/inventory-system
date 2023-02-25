@@ -1,0 +1,21 @@
+<%- include('../../partials/header.ejs') %>
+<%- include('../../partials/adminnavbar') %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="add_bt">
+                <p><i class="bi bi-search"></i> Enquire By Partnumber</p>
+                <div>
+                    Searched Answer
+                    <% if (Items.length = 1){ %> 
+                    <p><%= Items.itemname %></p>
+                     %> <% } else{ %>
+                        <p>There are no results </p>
+                      <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('../../partials/footer') %>

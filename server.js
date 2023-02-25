@@ -44,4 +44,4 @@ app.use((req, res) => {
 })
 
 // port number
-app.listen(process.env.PORT, console.log("Running on port http://localhost:4001"))
+app.listen(process.env.PORT || 4001, console.log("Running on port http://localhost:4001"))
